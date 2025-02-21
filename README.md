@@ -1,22 +1,23 @@
-Email Conversion Prediction Model
-Overview
+# Email Conversion Prediction Model
+
+## Overview
 This project uses machine learning to predict if a customer is likely to buy based on email text. It employs logistic regression and text preprocessing techniques.
 
-Features
-Cleans email text by removing special characters and converting to lowercase.
-Converts text data into numerical features using TF-IDF Vectorization.
-Uses a logistic regression model for classification.
-Saves and loads the trained model using joblib.
-Installation
-bash
-Copy
-Edit
+## Features
+- Cleans email text by removing special characters and converting to lowercase.
+- Converts text data into numerical features using TF-IDF Vectorization.
+- Uses a logistic regression model for classification.
+- Saves and loads the trained model using joblib.
+
+## Installation
+```bash
 pip install numpy pandas scikit-learn joblib
-Usage
-Training the Model
-python
-Copy
-Edit
+```
+
+## Usage
+
+### Training the Model
+```python
 import pandas as pd
 import re
 from sklearn.feature_extraction.text import TfidfVectorizer
@@ -56,10 +57,10 @@ pipeline = Pipeline([
 
 pipeline.fit(X_train, y_train)
 joblib.dump(pipeline, "email_prediction_model.pkl")
-Predicting Conversion
-python
-Copy
-Edit
+```
+
+### Predicting Conversion
+```python
 import joblib
 
 def predict_conversion(email_text):
@@ -70,5 +71,7 @@ def predict_conversion(email_text):
 # Example Usage
 new_email = "We are considering buying your product, send pricing details."
 print(predict_conversion(new_email))
+```
+
 Author:Harish
 Intern:Minervasoft
